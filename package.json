@@ -40,6 +40,10 @@
     "typescript": "^3.6.4"
   },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/svnnynior/react-visibility-tracking-hooks"
+  },
   "keywords": [
     "react",
     "hooks",
