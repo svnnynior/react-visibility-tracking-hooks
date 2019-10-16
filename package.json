@@ -1,6 +1,7 @@
 {
   "name": "react-visibility-tracking-hooks",
-  "version": "0.1.0",
+  "description": "React Hooks for Tracking Element Position in Window Viewport",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "dist/react-visibility-tracking-hooks.esm.js",
   "typings": "dist/index.d.ts",
