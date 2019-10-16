@@ -1,7 +1,5 @@
 # React Visibility Tracking Hooks
 
-----
-
 React Hooks for tracking visibility status of elements in viewport, inspired by [react-visibility-sensor](https://github.com/joshwnj/react-visibility-sensor)
 
 
