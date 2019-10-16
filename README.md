@@ -1,6 +1,6 @@
 React Visibility Tracking Hooks
 
-====
+----
 
 React Hooks for tracking visibility status of elements in viewport, inspired by [react-visibility-sensor](https://github.com/joshwnj/react-visibility-sensor)
 
@@ -71,7 +71,7 @@ Options
 | `scrollThrottleLimit` | Throttle delay for "scroll" event                                                                                                                                                                                    | `250`                                                     |
 | `resizeCheck`         | If true, "resize" event listener will be enabled                                                                                                                                                                     | `false`                                                   |
 | `resizeThrottleLimit` | Throttle delay for "resize" event                                                                                                                                                                                    | `250`                                                     |
-| `minElementOffset`    | Offset padding (in `px`) for each side of element, positive value will padded *inside* element (rectangle will be smaller) and vice versa for negative value                                                         | ```javascript { top: 0, left: 0, bottom: 0, right: 0 }``` |
+| `minElementOffset`    | Offset padding (in `px`) for each side of element, positive value will padded *inside* element (rectangle will be smaller) and vice versa for negative value                                                         | ` { top: 0, left: 0, bottom: 0, right: 0 }` |
     
 ----
 
