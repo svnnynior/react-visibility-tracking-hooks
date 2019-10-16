@@ -62,24 +62,35 @@ function MyComponent() {
 Options
 ----
 
-
-- `minElementOffset`: (default {}) 
-
-| Option                | Description                                                                                                                                                                                                          | Default                                                   |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------- |
-| `onVisibilityChange`  | callback for whenever the element visibility status changes (every window "scroll" or "resize")                                                                                                                      | `undefined`                                               |
-| `partiallyVisible`    | If true, consider element visible even when only a part of it is visible. The value can also be 'top', 'left', 'bottom', or 'right' in case we want to specifically consider only one part of the element as visible | `false`                                                   |
-| `scrollCheck`         | If true, "scroll" event listener will be enabled                                                                                                                                                                     | `true`                                                    |
-| `scrollThrottleLimit` | Throttle delay for "scroll" event                                                                                                                                                                                    | `250`                                                     |
-| `resizeCheck`         | If true, "resize" event listener will be enabled                                                                                                                                                                     | `false`                                                   |
-| `resizeThrottleLimit` | Throttle delay for "resize" event                                                                                                                                                                                    | `250`                                                     |
-| `minElementOffset`    | Offset padding (in `px`) for each side of element, positive value will padded *inside* element (rectangle will be smaller) and vice versa for negative value                                                         | ` { top: 0, left: 0, bottom: 0, right: 0 }` |
+| Option                | Description                                                                                                                                                                                                          | Default                                    |
+| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
+| `onVisibilityChange`  | callback for whenever the element visibility status changes (every window "scroll" or "resize")                                                                                                                      | `undefined`                                |
+| `partiallyVisible`    | If true, consider element visible even when only a part of it is visible. The value can also be 'top', 'left', 'bottom', or 'right' in case we want to specifically consider only one part of the element as visible | `false`                                    |
+| `scrollCheck`         | If true, "scroll" event listener will be enabled                                                                                                                                                                     | `true`                                     |
+| `scrollThrottleLimit` | Throttle delay for "scroll" event                                                                                                                                                                                    | `250`                                      |
+| `resizeCheck`         | If true, "resize" event listener will be enabled                                                                                                                                                                     | `false`                                    |
+| `resizeThrottleLimit` | Throttle delay for "resize" event                                                                                                                                                                                    | `250`                                      |
+| `minElementOffset`    | Offset padding (in `px`) for each side of element, positive value will padded *inside* element (rectangle will be smaller) and vice versa for negative value                                                         | `{ top: 0, left: 0, bottom: 0, right: 0 }` |
     
-----
+## Utility
+
+- `checkIsVisible(nodeRect, containmentRect, minElementOffset, partiallyVisible)`: Function for checking if *nodeRect* is visible inside *containmentRect* 
+- `computePercentVisible(nodeRect, containmentRect)`: Function to compute how much (in percent) *nodeRect* is inside *containmentRect*
+
+#### Note: 
+- nodeRect and containmentRect need to be in this format 
+  ```javascript
+  // position relative to window viewport (px)
+  { 
+    top: 0, 
+    left: 0, 
+    bottom: 0, 
+    ight: 0 
+  }
+  ```
 
 TO-DO
 ----
-
 - Example
   - [ ] Example on Code Sandbox
   - [ ] Building and Running Example Locally
