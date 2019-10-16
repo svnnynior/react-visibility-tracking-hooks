@@ -8,11 +8,15 @@ Installation
 
 using npm
 
-`npm install react-visibility-tracking-hooks`
+```shell
+npm install react-visibility-tracking-hooks
+```
 
 or with yarn
 
-`yarn add react-visibility-tracking-hooks`
+```shell
+yarn add react-visibility-tracking-hooks
+```
 
 
 Example
