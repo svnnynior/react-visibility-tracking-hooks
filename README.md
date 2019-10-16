@@ -59,8 +59,8 @@ function MyComponent() {
 }
 ```
 
-Options
-----
+### Options
+
 
 | Option                | Description                                                                                                                                                                                                          | Default                                    |
 | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------ |
@@ -72,7 +72,7 @@ Options
 | `resizeThrottleLimit` | Throttle delay for "resize" event                                                                                                                                                                                    | `250`                                      |
 | `minElementOffset`    | Offset padding (in `px`) for each side of element, positive value will padded *inside* element (rectangle will be smaller) and vice versa for negative value                                                         | `{ top: 0, left: 0, bottom: 0, right: 0 }` |
     
-## Utility
+### Utility
 
 - `checkIsVisible(nodeRect, containmentRect, minElementOffset, partiallyVisible)`: Function for checking if *nodeRect* is visible inside *containmentRect* 
 - `computePercentVisible(nodeRect, containmentRect)`: Function to compute how much (in percent) *nodeRect* is inside *containmentRect*
