@@ -184,7 +184,12 @@ function useVisibilityTracking({
   scrollThrottleLimit = 250,
   resizeCheck = false,
   resizeThrottleLimit = 250,
-  minElementOffset = {},
+  minElementOffset = {
+    top: 0,
+    left: 0,
+    bottom: 0,
+    right: 0,
+  },
 }: VisibilityTrackingProps = {}): [RefCallback, VisibilityObject] {
   const [isVisible, setIsVisible] = useState<boolean>(false);
   const [percentVisible, setPercentVisible] = useState<VisibilityPercent>({
