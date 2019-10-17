@@ -9,7 +9,7 @@ const moonImage = require('./assets/moon.png');
 const sunImage = require('./assets/sun.png');
 
 const containerStyle = {
-  height: '170vh',
+  height: '180vh',
   width: '100%',
   fontFamily: "'Montserrat', sans-serif",
 };
@@ -50,13 +50,13 @@ const catImageStyle = {
 };
 const moonContainer = {
   position: 'fixed',
-  top: '30%',
+  top: '25%',
   left: '50%',
   marginLeft: '-50px',
 };
 const sunContainer = {
   position: 'fixed',
-  top: '30%',
+  top: '25%',
   left: '-50%',
   marginLeft: '-50px',
 };
