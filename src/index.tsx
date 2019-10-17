@@ -266,10 +266,6 @@ function useVisibilityTracking({
   // https://reactjs.org/docs/hooks-faq.html#how-can-i-measure-a-dom-node
   const elementCallbackRef = useCallback(
     (node: HTMLElement | null) => {
-      const eventListeners = eventListenersRef.current;
-      if (eventListeners) {
-        return;
-      }
       if (node !== null) {
         nodeRef.current = node;
         if (scrollCheck) {
@@ -277,6 +273,20 @@ function useVisibilityTracking({
         }
         if (resizeCheck) {
           addEventListener('resize', resizeThrottleLimit);
+        }
+      } else {
+        const eventListeners = eventListenersRef.current;
+        for (const event in eventListeners) {
+          const eventListenerInfo = eventListeners[event as ObservedEvent];
+          if (eventListenerInfo !== undefined) {
+            if (eventListenerInfo.getTimeout() !== null) {
+              clearTimeout(eventListenerInfo.getTimeout()!);
+            }
+            window.removeEventListener(
+              event,
+              eventListenerInfo.eventListenerFn
+            );
+          }
         }
       }
     },
@@ -291,9 +301,9 @@ function useVisibilityTracking({
 
   useEffect(() => {
     return () => {
-      const eventListners = eventListenersRef.current;
-      for (const event in eventListners) {
-        const eventListenerInfo = eventListners[event as ObservedEvent];
+      const eventListeners = eventListenersRef.current;
+      for (const event in eventListeners) {
+        const eventListenerInfo = eventListeners[event as ObservedEvent];
         if (eventListenerInfo !== undefined) {
           if (eventListenerInfo.getTimeout() !== null) {
             clearTimeout(eventListenerInfo.getTimeout()!);
