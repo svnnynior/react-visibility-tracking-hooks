@@ -99,9 +99,6 @@ function MyComponent() {
 
 TO-DO
 ----
-- Example
-  - [ ] Example on Code Sandbox
-  - [ ] Building and Running Example Locally
 
 - Test
   - [ ] Write Test using [react-testing-library](https://github.com/testing-library/react-testing-library)
