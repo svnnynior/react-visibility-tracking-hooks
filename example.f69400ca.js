@@ -35345,7 +35345,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"../src/index.tsx":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"../node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/react-visibility-tracking-hooks/dist/react-visibility-tracking-hooks.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -35457,38 +35457,38 @@ function computePercentVisible(nodeRect, containmentRect) {
   };
 }
 
-function useVisibilityTracking(_a) {
-  var _b = _a === void 0 ? {} : _a,
-      onVisibilityChange = _b.onVisibilityChange,
-      _c = _b.partiallyVisible,
-      partiallyVisible = _c === void 0 ? false : _c,
-      _d = _b.scrollCheck,
-      scrollCheck = _d === void 0 ? true : _d,
-      _e = _b.scrollThrottleLimit,
-      scrollThrottleLimit = _e === void 0 ? 250 : _e,
-      _f = _b.resizeCheck,
-      resizeCheck = _f === void 0 ? false : _f,
-      _g = _b.resizeThrottleLimit,
-      resizeThrottleLimit = _g === void 0 ? 250 : _g,
-      _h = _b.minElementOffset,
-      minElementOffset = _h === void 0 ? {
+function useVisibilityTracking(_temp) {
+  var _ref = _temp === void 0 ? {} : _temp,
+      onVisibilityChange = _ref.onVisibilityChange,
+      _ref$partiallyVisible = _ref.partiallyVisible,
+      partiallyVisible = _ref$partiallyVisible === void 0 ? false : _ref$partiallyVisible,
+      _ref$scrollCheck = _ref.scrollCheck,
+      scrollCheck = _ref$scrollCheck === void 0 ? true : _ref$scrollCheck,
+      _ref$scrollThrottleLi = _ref.scrollThrottleLimit,
+      scrollThrottleLimit = _ref$scrollThrottleLi === void 0 ? 250 : _ref$scrollThrottleLi,
+      _ref$resizeCheck = _ref.resizeCheck,
+      resizeCheck = _ref$resizeCheck === void 0 ? false : _ref$resizeCheck,
+      _ref$resizeThrottleLi = _ref.resizeThrottleLimit,
+      resizeThrottleLimit = _ref$resizeThrottleLi === void 0 ? 250 : _ref$resizeThrottleLi,
+      _ref$minElementOffset = _ref.minElementOffset,
+      minElementOffset = _ref$minElementOffset === void 0 ? {
     top: 0,
     left: 0,
     bottom: 0,
     right: 0
-  } : _h;
+  } : _ref$minElementOffset;
 
-  var _j = (0, _react.useState)(false),
-      isVisible = _j[0],
-      setIsVisible = _j[1];
+  var _useState = (0, _react.useState)(false),
+      isVisible = _useState[0],
+      setIsVisible = _useState[1];
 
-  var _k = (0, _react.useState)({
+  var _useState2 = (0, _react.useState)({
     horizontalPercent: 0,
     verticalPercent: 0,
     overallPercent: 0
   }),
-      percentVisible = _k[0],
-      setPercentVisible = _k[1];
+      percentVisible = _useState2[0],
+      setPercentVisible = _useState2[1];
 
   var nodeRef = (0, _react.useRef)(null);
   var eventListenersRef = (0, _react.useRef)(null);
@@ -35645,7 +35645,7 @@ var React = __importStar(require("react"));
 
 var ReactDOM = __importStar(require("react-dom"));
 
-var index_1 = __importDefault(require("../src/index"));
+var react_visibility_tracking_hooks_1 = __importDefault(require("react-visibility-tracking-hooks"));
 
 var sleepingCatImage = require('./assets/sleeping-cat.png');
 
@@ -35713,7 +35713,7 @@ var weatherImageStyle = {
 };
 
 var App = function App() {
-  var _a = index_1.default(),
+  var _a = react_visibility_tracking_hooks_1.default(),
       ref = _a[0],
       _b = _a[1],
       isVisible = _b.isVisible,
@@ -35778,7 +35778,7 @@ var App = function App() {
 };
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
-},{"react-app-polyfill/ie11":"node_modules/react-app-polyfill/ie11.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/profiling.js","../src/index":"../src/index.tsx","./assets/sleeping-cat.png":"assets/sleeping-cat.png","./assets/awake-cat.png":"assets/awake-cat.png","./assets/moon.png":"assets/moon.png","./assets/sun.png":"assets/sun.png"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react-app-polyfill/ie11":"node_modules/react-app-polyfill/ie11.js","react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/profiling.js","react-visibility-tracking-hooks":"node_modules/react-visibility-tracking-hooks/dist/react-visibility-tracking-hooks.esm.js","./assets/sleeping-cat.png":"assets/sleeping-cat.png","./assets/awake-cat.png":"assets/awake-cat.png","./assets/moon.png":"assets/moon.png","./assets/sun.png":"assets/sun.png"}],"node_modules/parcel/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
