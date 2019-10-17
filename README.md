@@ -22,7 +22,15 @@ yarn add react-visibility-tracking-hooks
 Example
 ----
 
-TBD
+You can find an example [here](https://svnnynior.github.io/react-visibility-tracking-hooks/)
+
+or if you want to run it locally, clone this project and then:
+
+```shell
+ cd example
+ npm install
+ npm start
+```
 
 Usage
 ---
