@@ -50,7 +50,6 @@ const catBoxWrapper = {
   justifyContent: 'center',
   alignItems: 'center',
   flexDirection: 'column',
-  marginBottom: '30px',
   padding: '5px',
 };
 const catImageStyle = {
@@ -72,6 +71,13 @@ const sunContainer = {
 const weatherImageStyle = {
   width: '100px',
   height: '100px',
+};
+const scrollArrowContainerStyle = {
+  position: 'absolute',
+  top: '60%',
+  width: '100%',
+  textAlign: 'center',
+  color: 'white',
 };
 const App = () => {
   const [ref, { isVisible, percentVisible, rect }] = useVisibilityTracking();
@@ -115,7 +121,14 @@ const App = () => {
           )}
         </div>
       </div>
-      <div></div>
+      <div
+        style={{
+          ...scrollArrowContainerStyle,
+          opacity: 1 - percentVisible.overallPercent * 1.8,
+        }}
+      >
+        Scroll down to wake up the cat ...
+      </div>
       <div
         style={{
           ...moonContainer,
