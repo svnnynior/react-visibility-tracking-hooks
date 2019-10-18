@@ -32,6 +32,14 @@ const informationHeader = {
   fontWeight: 700,
 };
 const catBoxStyle = {
+  width: '100%',
+  height: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexDirection: 'column',
+};
+const catBoxWrapper = {
   width: '350px',
   height: '400px',
   position: 'absolute',
@@ -43,6 +51,7 @@ const catBoxStyle = {
   alignItems: 'center',
   flexDirection: 'column',
   marginBottom: '30px',
+  padding: '5px',
 };
 const catImageStyle = {
   width: '150px',
@@ -69,16 +78,9 @@ const App = () => {
 
   const catImage = isVisible ? awakeCatImage : sleepingCatImage;
   const catText = isVisible ? 'Oops... I am VISIBLE !?' : ' ';
-  const catBoxBorderStyle = isVisible
-    ? {
-        border: '5px solid transparent',
-        borderImage:
-          'linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)',
-        borderImageSlice: 1,
-      }
-    : {
-        border: '5px solid #f4f4f4',
-      };
+  const catBoxWrapperBackground = isVisible
+    ? 'linear-gradient(to bottom right, #b827fc 0%, #2c90fc 25%, #b8fd33 50%, #fec837 75%, #fd1892 100%)'
+    : '#f4f4f4';
   const scaledColor = 255 * percentVisible.overallPercent;
   const inversedScaledColor = 255 - scaledColor;
   const backgroundColor = `rgb(${scaledColor}, ${scaledColor}, ${scaledColor})`;
@@ -132,9 +134,17 @@ const App = () => {
       >
         <img src={sunImage} style={weatherImageStyle}></img>
       </div>
-      <div style={{ ...catBoxStyle, ...catBoxBorderStyle }} ref={ref}>
-        <h3>{catText}</h3>
-        <img src={catImage} style={catImageStyle}></img>
+      <div
+        style={{
+          ...catBoxWrapper,
+          background: catBoxWrapperBackground,
+        }}
+        ref={ref}
+      >
+        <div style={{ ...catBoxStyle, backgroundColor: backgroundColor }}>
+          <h3>{catText}</h3>
+          <img src={catImage} style={catImageStyle}></img>
+        </div>
       </div>
     </div>
   );
