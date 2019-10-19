@@ -1,29 +1,29 @@
 import { useState, useEffect, useCallback, useRef } from 'react';
 
-interface Offset {
+export interface Offset {
   top?: number;
   left?: number;
   bottom?: number;
   right?: number;
 }
-interface VisibilityRect {
+export interface VisibilityRect {
   top: number;
   left: number;
   bottom: number;
   right: number;
 }
 
-interface VisibilityPercent {
+export interface VisibilityPercent {
   verticalPercent: number;
   horizontalPercent: number;
   overallPercent: number;
 }
-interface VisibilityObject {
+export interface VisibilityObject {
   rect: ClientRect | DOMRect | null;
   isVisible: boolean;
   percentVisible: VisibilityPercent;
 }
-type RefCallback = (node: HTMLElement | null) => void;
+export type RefCallback = (node: HTMLElement | null) => void;
 interface EventListenerInfo {
   eventListenerFn: () => void;
   getTimeout: () => NodeJS.Timeout | null;
@@ -33,9 +33,9 @@ interface EventListeners {
   scroll?: EventListenerInfo;
   resize?: EventListenerInfo;
 }
-type ObservedEvent = keyof EventListeners;
+export type ObservedEvent = keyof EventListeners;
 
-interface VisibilityTrackingProps {
+export interface VisibilityTrackingProps {
   onVisibilityChange?: (
     isVisible: boolean,
     percentVisible: VisibilityPercent
