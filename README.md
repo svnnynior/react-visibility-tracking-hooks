@@ -101,7 +101,10 @@ TO-DO
 ----
 
 - Test
-  - [ ] Write Test using [react-testing-library](https://github.com/testing-library/react-testing-library) (Seems to be hard because JSDom does not do layouting, read [this issues](https://github.com/testing-library/react-testing-library/issues/353))
+  - [ ] Write Test using [react-testing-library](https://github.com/testing-library/react-testing-library) 
+    - End-to-end test seems to be impossible because jsdom does not do layouting, read [this issues](https://github.com/testing-library/react-testing-library/issues/353))
+    - So we will divide test into *unit testing* (`checkIsVisible` and `computePercentVisible`) and *integration testing* (ref callback, event listener, etc.)
+  
 
 License
 ----
