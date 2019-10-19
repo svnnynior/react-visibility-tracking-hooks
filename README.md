@@ -101,7 +101,7 @@ TO-DO
 ----
 
 - Test
-  - [ ] Write Test using [react-testing-library](https://github.com/testing-library/react-testing-library)
+  - [ ] Write Test using [react-testing-library](https://github.com/testing-library/react-testing-library) (Seems to be hard because JSDom does not do layouting, read [this issues](https://github.com/testing-library/react-testing-library/issues/353))
 
 License
 ----
