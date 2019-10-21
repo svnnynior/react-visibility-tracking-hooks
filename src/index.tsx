@@ -57,21 +57,14 @@ function getVisibilityRect(rect: ClientRect | DOMRect): VisibilityRect {
     bottom: 0,
     right: 0,
   };
-  if (rect instanceof DOMRect) {
-    visibilityRect = {
-      top: Math.floor(rect.y),
-      left: Math.floor(rect.x),
-      bottom: Math.floor(rect.y + rect.height),
-      right: Math.floor(rect.x + rect.width),
-    };
-  } else {
-    visibilityRect = {
-      top: Math.floor(rect.top),
-      left: Math.floor(rect.left),
-      bottom: Math.floor(rect.bottom),
-      right: Math.floor(rect.right),
-    };
-  }
+  visibilityRect = {
+    top: Math.floor((rect as DOMRect).y) || Math.floor(rect.top),
+    left: Math.floor((rect as DOMRect).x) || Math.floor(rect.left),
+    bottom:
+      Math.floor((rect as DOMRect).y + rect.height) || Math.floor(rect.bottom),
+    right:
+      Math.floor((rect as DOMRect).x + rect.width) || Math.floor(rect.right),
+  };
 
   return visibilityRect;
 }
@@ -137,8 +130,13 @@ export function computePercentVisible(
   nodeRect: VisibilityRect,
   containmentRect: VisibilityRect
 ): VisibilityPercent {
+  const nodeWidth = nodeRect.right - nodeRect.left;
+  const nodeHeight = nodeRect.bottom - nodeRect.top;
+  const nodeHasSize = nodeWidth > 0 && nodeHeight > 0;
+
   // No Intersection Case
   if (
+    !nodeHasSize ||
     nodeRect.left > containmentRect.right ||
     nodeRect.right < containmentRect.left ||
     nodeRect.top > containmentRect.bottom ||
@@ -150,8 +148,6 @@ export function computePercentVisible(
       overallPercent: 0,
     };
   }
-  const nodeWidth = nodeRect.right - nodeRect.left;
-  const nodeHeight = nodeRect.bottom - nodeRect.top;
   const horizontalIntersect = Math.min(
     containmentRect.right - containmentRect.left,
     containmentRect.right - nodeRect.left,
@@ -235,7 +231,7 @@ function useVisibilityTracking({
       };
 
       const eventListenerFn = () => {
-        if (timeout !== null) {
+        if (!timeout) {
           timeout = setTimeout(
             checkVisibilityCallback,
             throttleLimit < 0 ? 0 : throttleLimit
